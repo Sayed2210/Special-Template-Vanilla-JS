@@ -3,3 +3,93 @@
     margin: 0;
     box-sizing: border-box;
 }
+:root {
+    --main-color: rgb(62, 100, 255);
+    --alt-color: rgb(94, 223, 255);
+    --third-color: rgb(178, 252, 255);
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+ul {
+    list-style-type: none;
+}
+/*Style Landing Section*/
+.landing-page {
+    height: 100vh;
+    background-image: url(../img/wallpaperflare.com_wallpaper\ \(4\)-min.jpg);
+    background-size: cover;
+    position: relative;
+}
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+.landing-page .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    z-index: 2;
+    color: #fff;
+    position: relative;
+}
+.logo {
+    font-size: 1.3rem;
+    font-style: italic;
+}
+.logo i {
+    color: var(--main-color);
+    margin-right: 5px;
+}
+.landing-page .header ul{
+    display: flex;
+    align-items: center;
+}
+.landing-page .header ul li {
+    padding: 15px;
+}
+.landing-page .header ul a {
+    color: #fff;
+    text-decoration: none;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+.landing-page .header ul a.active,
+.landing-page .header ul a:hover {
+    color: var(--main-color);
+}
+.intro-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+}
+.intro-text h1 {
+    font-size: 2.3rem;
+}
+.intro-text h1 span {
+    color: var(--main-color);
+}
+.intro-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
