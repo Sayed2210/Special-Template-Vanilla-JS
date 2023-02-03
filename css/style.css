@@ -33,15 +33,20 @@ ul {
     -o-transition: 0.3s;
     transition: 0.3s;
 }
-.setting-box i {
+.setting-box .setting-btn {
     position: absolute;
     right: -44px;
-    top: 150px;
-    padding: 10px;
-    background-color: var(--main-color);
-    font-size: 1.5rem;
+    top: 150px;   
+    background-color: var(--main-color);   
     text-align: center;
     cursor: pointer;
+}
+.setting-box .setting-btn i {
+    padding: 10px;
+    font-size: 1.5rem;
+}
+.open {
+    left: 0;
 }
 /*Style Landing Section*/
 .landing-page {

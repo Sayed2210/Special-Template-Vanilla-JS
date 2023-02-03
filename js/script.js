@@ -1,3 +1,10 @@
+//setting box
+document.querySelector(".setting-btn i").addEventListener("click", (e)=>{
+    //Make gear rotate
+    e.currentTarget.classList.toggle("fa-spin");
+    //open the box
+    document.querySelector(".setting-box").classList.toggle("open");
+})
 //selesct Landing Page section
 let landingPage = document.querySelector('.landing-page');
 //images array
