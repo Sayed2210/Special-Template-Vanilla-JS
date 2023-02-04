@@ -23,7 +23,7 @@ ul {
     left: -200px;
     top: 0;
     width: 200px;
-    background-color: var(--main-color);
+    background-color: #000;
     z-index: 1000;
     color: #fff;
     min-height: 100vh;
@@ -37,16 +37,61 @@ ul {
     position: absolute;
     right: -44px;
     top: 150px;   
-    background-color: var(--main-color);   
+    background-color: #000;   
     text-align: center;
     cursor: pointer;
 }
 .setting-box .setting-btn i {
     padding: 10px;
     font-size: 1.5rem;
+    color:  var(--main-color);
 }
 .open {
     left: 0;
+}
+.setting-box .colors-box {
+    padding: 25px;
+}
+.setting-box .colors-box h4 {
+    color: var(--main-color);
+    text-align: center;
+}
+.setting-box .colors-box .color-list {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.setting-box .colors-box .color-list li {
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    opacity: 0.5;
+    margin-right: 5px;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+.setting-box .colors-box .color-list li.active {
+    opacity: 1;
+}
+.setting-box .colors-box .color-list li:first-of-type {
+    background-color: #0014FF;
+}
+.setting-box .colors-box .color-list li:nth-child(2) {
+    background-color: #009EFF;
+}
+.setting-box .colors-box .color-list li:nth-child(3) {
+    background-color: #00E7FF;
+}
+.setting-box .colors-box .color-list li:last-of-type {
+    background-color: #00FFF6;
 }
 /*Style Landing Section*/
 .landing-page {

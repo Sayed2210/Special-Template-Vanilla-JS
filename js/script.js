@@ -5,6 +5,18 @@ document.querySelector(".setting-btn i").addEventListener("click", (e)=>{
     //open the box
     document.querySelector(".setting-box").classList.toggle("open");
 })
+//change color
+let changColor = Array.from(document.querySelectorAll('.color-list li'));
+changColor.forEach((li) => {
+    li.addEventListener("click", (e)=>{
+        document.documentElement.style.setProperty('--main-color',e.currentTarget.dataset.color);
+        changColor.forEach((el) => {
+            el.classList.remove("active");
+        })
+        e.currentTarget.classList.add("active");
+    })
+
+})
 //selesct Landing Page section
 let landingPage = document.querySelector('.landing-page');
 //images array
