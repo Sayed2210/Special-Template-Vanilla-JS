@@ -1,3 +1,9 @@
+//local stroage
+let mainColor = localStorage.getItem("color-op");
+//check that main color is not empty
+if(mainColor !== null) {
+    document.documentElement.style.setProperty('--main-color', mainColor);
+}
 //setting box
 document.querySelector(".setting-btn i").addEventListener("click", (e)=>{
     //Make gear rotate
@@ -7,15 +13,19 @@ document.querySelector(".setting-btn i").addEventListener("click", (e)=>{
 })
 //change color
 let changColor = Array.from(document.querySelectorAll('.color-list li'));
+//loop to change color
 changColor.forEach((li) => {
     li.addEventListener("click", (e)=>{
+        //set property 
         document.documentElement.style.setProperty('--main-color',e.currentTarget.dataset.color);
+        //add color to local stroage
+        localStorage.setItem("color-op" , e.currentTarget.dataset.color);
+        //add class on clicked color
         changColor.forEach((el) => {
             el.classList.remove("active");
         })
         e.currentTarget.classList.add("active");
     })
-
 })
 //selesct Landing Page section
 let landingPage = document.querySelector('.landing-page');
