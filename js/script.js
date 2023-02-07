@@ -3,6 +3,13 @@ let mainColor = localStorage.getItem("color-op");
 //check that main color is not empty
 if(mainColor !== null) {
     document.documentElement.style.setProperty('--main-color', mainColor);
+    //add class active from laocal storage
+    document.querySelectorAll('.color-list li').forEach((e)=>{
+        e.classList.remove("active");
+        if(e.dataset.color === mainColor){
+            e.classList.add("active")
+        }
+    })
 }
 //setting box
 document.querySelector(".setting-btn i").addEventListener("click", (e)=>{

@@ -80,6 +80,7 @@ ul {
 }
 .setting-box .colors-box .color-list li.active {
     opacity: 1;
+    border: 2px solid #fff;
 }
 .setting-box .colors-box .color-list li:first-of-type {
     background-color: #0014FF;
