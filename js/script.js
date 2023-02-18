@@ -82,7 +82,7 @@ function randombg() {
         bgInterval = setInterval(()=>{
             let randowmNum = Math.trunc(Math.random() * imgArray.length);
             landingPage.style.backgroundImage = 'url(../img/'+imgArray[randowmNum]+')';
-        },1000)
+        },10000)
     }
 }
 randombg();
