@@ -401,3 +401,18 @@ img {
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
 }
+/* gallary section */
+.gallary {
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+    background-color: var(--section-bg);
+}
+.imgs-box {
+    text-align: center;
+}
+.imgs-box img {
+    width: 200px;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
