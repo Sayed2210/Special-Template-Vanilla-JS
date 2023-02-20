@@ -7,6 +7,8 @@
     --main-color: rgb(62, 100, 255);
     --alt-color: rgb(94, 223, 255);
     --third-color: rgb(178, 252, 255);
+    --section-bg: #f6f6f6;
+    --padding-section: 50px;
 }
 body {
     font-family: 'Open Sans', sans-serif;
@@ -16,6 +18,9 @@ html {
 }
 ul {
     list-style-type: none;
+}
+img {
+    max-width: 100%;
 }
 /*some components*/
 .container {
@@ -291,4 +296,97 @@ ul {
     .intro-text {
         text-align: justify;
     }
+}
+/* About us section */
+.about-us {
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+    background-color: var(--section-bg);
+}
+.about-us .container {
+    display: flex;
+}
+.about-us .info {
+    flex: 1;
+}
+.about-us .info h2 {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    color: var(--main-color);
+}
+.about-us .info p {
+    line-height: 1.6;
+    color: #535353;
+}
+.about-us img {
+    width: 350px;
+    padding: 3px;
+    border: 1px solid var(--main-color);
+}
+/* Skills Section */
+.skills {
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+}
+.skills .container > h2 {
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    color: var(--main-color);
+    text-align: center;
+}
+.skill-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 10px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--main-color);
+}
+.skill-box h4 {
+    width: 100px;
+}
+.progress {
+    position: relative;
+    width: calc(100% - 100px);
+    background-color: #f6f6f6;
+    height: 30px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+}
+.progress > span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--main-color);
+    height: 100%;
+}
+.progress > span > span {
+    position: absolute;
+    right: -16px;
+    top: -40px;
+    padding: 3px;
+    background-color: var(--main-color);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: .9rem;
+}
+.progress > span > span::before {
+    content: "";
+    border: 5px solid;
+    border-color: var(--main-color) transparent transparent;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    -o-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
 }
