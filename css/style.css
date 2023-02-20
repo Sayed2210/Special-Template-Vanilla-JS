@@ -362,6 +362,17 @@ img {
     top: 0;
     background-color: var(--main-color);
     height: 100%;
+    width: 0;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-transition: .6s;
+    -moz-transition: .6s;
+    -ms-transition: .6s;
+    -o-transition: .6s;
+    transition: .6s;
 }
 .progress > span > span {
     position: absolute;

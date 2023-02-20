@@ -86,3 +86,21 @@ function randombg() {
     }
 }
 randombg();
+// select Skills Section 
+let skills = document.querySelector(".skills");
+// Create Funtion to make Animation
+window.onscroll = function() {
+    let skillsOffsetTop = skills.offsetTop;
+  // Skills Outer Height
+  let skillsOuterHeight = skills.offsetHeight;
+  // Window Height
+  let windowHeight = this.innerHeight;
+  // Window ScrollTop
+  let windowScroll = this.scrollY;
+    if(windowScroll >= (skillsOffsetTop+skillsOuterHeight-windowHeight)) {
+        let skill = Array.from(document.querySelectorAll(".progress > span"));
+        skill.forEach((e) => {
+            e.style.width = e.dataset.progress;
+        })
+    }
+}
