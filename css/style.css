@@ -57,6 +57,7 @@ img {
     z-index: 1000;
     color: #fff;
     min-height: 100vh;
+    border: 1px solid var(--main-color);
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
     -ms-transition: 0.3s;
