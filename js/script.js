@@ -140,4 +140,16 @@ ourGallary.forEach((img)=>{
         popupBox.appendChild(closebtn);
     });
 });
-
+//select bullets
+let bullets = Array.from(document.querySelectorAll(".bullet"));
+//loop on all bulets
+bullets.forEach(bullet => {
+    //add function to bullets
+    bullet.addEventListener("click",(e)=>{
+        document.querySelector(e.currentTarget.dataset.section).scrollIntoView(
+            {
+                behavier: "smooth"
+            }
+        )
+    })
+})
