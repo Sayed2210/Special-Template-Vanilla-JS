@@ -462,6 +462,11 @@ img {
 .timeline .container {
     position: relative;
 }
+.timeline h2 {
+    margin-bottom: 25px;
+    font-size: 2.5rem;
+    color: var(--main-color);
+}
 .timeline .container::before {
     content: '';
     position: absolute;
@@ -535,4 +540,36 @@ img {
 .timeline .timeline-cont p {
     color: #3c3c3c;
     line-height: 1.4;
+}
+/* Featurs Section */
+.features {
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+    background-color: var(--section-bg);
+}
+.features h2 {
+    margin-bottom: 85px;
+    font-size: 2.5rem;
+    color: var(--main-color);
+    text-align: center;
+}
+.features .feat {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 30px;
+}
+.features .feat-box {
+    text-align: center;
+}
+.features .feat-box i {
+    color: var(--main-color);
+    margin-bottom: 25px;
+    font-size: 2.5rem;
+}
+.features .feat-box h4 {
+    margin-bottom: 15px;
+}
+.features .feat-box p {
+    color: #3c3c3c;
+    line-height: 1.6;
 }
