@@ -228,6 +228,20 @@ img {
 .setting-box .option span.active {
     opacity: 1;
 }
+.reset {
+    background-color: #ff0000;
+    color: #fff;
+    width: 180px;
+    text-align: center;
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+}
 /*Style Landing Section*/
 .landing-page {
     height: 100vh;

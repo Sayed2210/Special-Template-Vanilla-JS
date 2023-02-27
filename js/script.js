@@ -149,20 +149,32 @@ bullets.forEach(bullet => {
     })
 })
 //show hide bulltes
-let buletsSpan = document.querySelectorAll(".option .showhide-bullets span");
-let bulletsContainer =document.querySelectorAll(".nav-bullets");
+let buletsSpan = document.querySelectorAll(".showhide-bullets span");
+let bulletsContainer =document.querySelector(".nav-bullets");
 let buletsLocalStorage = localStorage.getItem("bulltes-opt");
+if(buletsLocalStorage !== null) {
+    buletsSpan.forEach((e)=>{
+        e.classList.remove('active');
+    })
+    if(buletsLocalStorage === 'block'){
+        document.querySelector(".showhide-bullets span.yes").classList.add('active');
+        bulletsContainer.style.display = 'block';
+    }else {
+        bulletsContainer.style.display = 'none';
+        document.querySelector(".showhide-bullets span.no").classList.add('active');
+    }
+}
 //create function to span
 buletsSpan.forEach(e => {
     e.addEventListener("click", (el) => {
-        if (e.dataset.show === 'yes') {
-            bulletsContainer.style.display = 'block';
-            localStorage.setItem("bullets_option", 'block');
+        if (e.dataset.show !== 'yes') {
+            bulletsContainer.style.display ='none';
+            localStorage.setItem("bulltes-opt", 'none');
         } else {
-            bulletsContainer.style.display = 'none'
-            localStorage.setItem("bullets_option", 'none');
+            bulletsContainer.style.display ='block';
+            localStorage.setItem("bulltes-opt", 'block');
         } 
-        handleActive(e);
+        handleActive(el);
     });
 });
 //Create Handle active state function 
@@ -172,3 +184,8 @@ function handleActive (element) {
     })
     element.currentTarget.classList.add("active");
 }
+//reset button
+document.querySelector(".reset").addEventListener(('click'),()=>{
+    localStorage.clear();
+    window.location.reload();
+}) 
