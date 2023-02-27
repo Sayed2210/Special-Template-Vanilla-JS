@@ -195,20 +195,20 @@ img {
     background-color: #00FFF6;
 }
 /*style background random box*/
-.random-background {
-    margin: 10px;
+.option {
+    margin: 20px 10px;
     text-align: center;
 }
-.random-background h4 {
+.option h4 {
     color: var(--main-color);
 }
-.random-background > div {
+.option > div {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
 }
-.random-background > div > span {
+.option > div > span {
     background-color: var(--main-color);
     margin-right: 5px;
     padding: 4px 10px;
@@ -224,7 +224,8 @@ img {
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
-}.random-background > div > span.active {
+}
+.setting-box .option span.active {
     opacity: 1;
 }
 /*Style Landing Section*/

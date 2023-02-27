@@ -18,7 +18,7 @@ let bgInterval;
 //local storage for background image
 let bgImageLocal = localStorage.getItem("bg-op");
 if(bgImageLocal !== null) {
-    document.querySelectorAll('.random-background > div > span').forEach((span)=> {
+    document.querySelectorAll('.option .random-bg span').forEach((span)=> {
         span.classList.remove("active");
     })
     if(bgImageLocal === 'true'){
@@ -45,22 +45,16 @@ changColor.forEach((li) => {
         document.documentElement.style.setProperty('--main-color',e.currentTarget.dataset.color);
         //add color to local stroage
         localStorage.setItem("color-op" , e.currentTarget.dataset.color);
-        //add class on clicked color
-        changColor.forEach((el) => {
-            el.classList.remove("active");
-        })
-        e.currentTarget.classList.add("active");
+        //add active class  on clicked color
+        handleActive(e);
     })
 })
 //change background
-let changBg = Array.from(document.querySelectorAll('.random-background > div > span'));
+let changBg = Array.from(document.querySelectorAll('.option .random-bg  span'));
 //loop to change background
 changBg.forEach((span) => {
     span.addEventListener("click", (e)=>{
-        changBg.forEach((span)=> {
-            span.classList.remove("active");
-        })
-        e.currentTarget.classList.add("active"); 
+        handleActive(e);
         if(e.currentTarget.dataset.background === 'yes') {
             bgoption = true;
             randombg();
@@ -127,9 +121,11 @@ ourGallary.forEach((img)=>{
         popupImg.src = img.src;
         popupBox.appendChild(popupImg);
         document.body.appendChild(popupBox);
+        //create button
         let closebtn = document.createElement("span");
         closebtn.innerHTML = '<i class="fa-solid fa-circle-xmark"></i>';
         closebtn.className = 'close-btn';
+        popupBox.appendChild(closebtn);
         // Close Popup
         closebtn.addEventListener("click", (e)=> { 
             // Remove The Current Popup
@@ -137,7 +133,6 @@ ourGallary.forEach((img)=>{
             // Remove Overlay
             document.querySelector(".popup-overlay").remove();      
         });
-        popupBox.appendChild(closebtn);
     });
 });
 //select bullets
@@ -153,3 +148,27 @@ bullets.forEach(bullet => {
         )
     })
 })
+//show hide bulltes
+let buletsSpan = document.querySelectorAll(".option .showhide-bullets span");
+let bulletsContainer =document.querySelectorAll(".nav-bullets");
+let buletsLocalStorage = localStorage.getItem("bulltes-opt");
+//create function to span
+buletsSpan.forEach(e => {
+    e.addEventListener("click", (el) => {
+        if (e.dataset.show === 'yes') {
+            bulletsContainer.style.display = 'block';
+            localStorage.setItem("bullets_option", 'block');
+        } else {
+            bulletsContainer.style.display = 'none'
+            localStorage.setItem("bullets_option", 'none');
+        } 
+        handleActive(e);
+    });
+});
+//Create Handle active state function 
+function handleActive (element) {
+    element.currentTarget.parentNode.querySelectorAll(".active").forEach((el) => {
+        el.classList.remove("active");
+    })
+    element.currentTarget.classList.add("active");
+}
