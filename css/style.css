@@ -30,21 +30,27 @@ img {
     margin-right: auto;
   }
 /*Mobile Screen*/
-@media (min-width: 415px) {
+@media (max-width: 415px) {
     .container {
         width: 100%;
     }
 }
 /*Medium Screen (Ipad)*/
-@media (min-width: 821px) {
+@media (min-width: 786px) {
     .container {
-        width: 800px;
+        width: 720px;
     }
 }
-/*Big Screen*/
-@media (min-width: 1215px) {
+/*Desktop Screen*/
+@media (min-width: 990px) {
     .container {
-        width: 1115px;
+        width: 960px;
+    }
+}
+/* big Screen */
+@media (min-width: 1200px) {
+    .container {
+        width: 1140px;
     }
 }
 /*style setting box*/
@@ -249,6 +255,9 @@ img {
     background-size: cover;
     position: relative;
 }
+@media (max-width: 545px) {
+    
+}
 .overlay {
     position: absolute;
     left: 0;
@@ -296,7 +305,7 @@ img {
     -o-transition: 0.3s;
     transition: 0.3s;
 }
-@media (max-width: 768px) {
+@media (max-width: 990px) {
     .landing-page .header ul {
         display: none;
     }
@@ -323,7 +332,7 @@ img {
     }
     .menu-bar {
         display: none;
-        background-color: rgba(62,100,255, 0.6);
+        background-color: #000;
         flex-direction: column;
         width: 90%;
         justify-content: center;
@@ -336,6 +345,7 @@ img {
         position: absolute;
         right: 10px;
         top: 100px;
+        z-index: 1000000000000000;
     }
     .menu-bar a {
     padding: 25px;
@@ -343,7 +353,7 @@ img {
     color: #fff;
     text-decoration: none;
     }
-    .nav .container .menu-bar a:not(:last-of-type) {
+    .nav .container .menu-bar a:not(:last-child) {
         border-bottom: 1px solid #fff;
     }
 }
@@ -360,7 +370,7 @@ img {
     -ms-transform: translate(-50%,-50%);
     -o-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
-    z-index: 2;
+    z-index: 1;
     color: #fff;
     text-align: center;
 }
@@ -733,3 +743,74 @@ img {
     color: var(--main-color);
     margin-bottom: 5px;
 }
+/* Contact Us */
+.contact-us {
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+    background-image: url(../img/andrew-stutesman-l68Z6eF2peA-unsplash.jpg);
+    position: relative;
+}
+.contact-us .container {
+    position: relative;
+    z-index: 500;
+}
+.contact-us h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--main-color);
+    margin-bottom: 50px;
+}
+.contact-us form {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    gap: 10px;
+    margin: 10px auto;
+    padding: 20px;
+}
+.contact-us .left,
+.contact-us .right {
+    flex: 1;
+}
+.contact-us form input:not([type="submit"]),
+.contact-us form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: rgba(218, 218, 218, 0.9);
+    border: 1px solid #ccc;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+}
+.contact-us form textarea {
+    height: 150px;
+}
+.contact-us form input:not([type="submit"]):focus,
+.contact-us form textarea:focus {
+    outline: 1px solid var(--main-color);
+}
+.contact-us form input:not([type="submit"]):focus::placeholder,
+.contact-us form textarea:focus::placeholder {
+    opacity: 0;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+.contact-us form input[type="submit"] {
+    width: 100%;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    background-color: var(--main-color);
+    padding: 10px;
+    border: 1px solid transparent;
+    color: #fff;
+}
+

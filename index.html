@@ -67,6 +67,9 @@
         <div class="bullet" data-section=".testimonials">
             <div class="tooltip">Testimonials</div>
         </div>
+        <div class="bullet" data-section=".contact-us">
+            <div class="tooltip">Contact Us</div>
+        </div>
     </div>
     <!-- Start Landing Page-->
     <div class="landing-page">
@@ -81,13 +84,18 @@
                     <li><a href="#timeline">Timeline </a></li>
                     <li><a href="#features">Features </a></li>
                     <li><a href="#testimonials">Testimonials </a></li>
+                    <li><a href="#contact-us">Contact Us</a></li>
                 </ul>
                 <label for="menu" class="menu-btn"><i class="fa-solid fa-bars-staggered"></i></label>
                 <input type="checkbox" id="menu" class="dis-menu">
                 <div class="menu-bar">
-                    <a href="#">Service</a>
-                    <a href="#">Products</a>
-                    <a href="#">Contact</a>    
+                    <a href="#about-us" class="active">About</a>
+                    <a href="#skills">Skills </a>
+                    <a href="#gallery">Gallery </a>
+                    <a href="#timeline">Timeline </a>
+                    <a href="#features">Features </a>
+                    <a href="#testimonials">Testimonials </a>
+                    <a href="#contact-us">Contact Us</a>   
                 </div>
             </div>
         </div>
@@ -330,6 +338,26 @@
         </div>
     </div>
     <!-- End Testimonials -->
+    <!-- Start Contact Us -->
+    <div class="contact-us" id="contact-us">
+        <div class="overlay"></div>
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form action="">
+                <div class="left">
+                    <input type="text" name="username" placeholder="Enter Your User Name">
+                    <input type="tel" name="phone" placeholder="Enter Your Phone">
+                    <input type="email" name="email" placeholder="Enter Your Email">
+                    <input type="text" name="subject" placeholder="Subject">
+                </div>
+                <div class="right">
+                    <textarea name="message" placeholder="Enter your Message"></textarea>
+                    <input type="submit" value="Send">
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- End Contact US -->
     <!-- My vanilla js -->
     <script src="js/script.js"></script>
 </body>
