@@ -24,27 +24,22 @@ img {
 }
 /*some components*/
 .container {
+    width: 100%;
     padding-left: 15px;
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
-  }
-/*Mobile Screen*/
-@media (max-width: 415px) {
-    .container {
-        width: 100%;
-    }
 }
 /*Medium Screen (Ipad)*/
-@media (min-width: 786px) {
+@media (min-width: 768px) {
     .container {
         width: 720px;
     }
 }
-/*Desktop Screen*/
-@media (min-width: 990px) {
+/*Big Screen*/ 
+@media (min-width: 1215px) {
     .container {
-        width: 960px;
+        width: 1115px;
     }
 }
 /* big Screen */
@@ -250,13 +245,10 @@ img {
 }
 /*Style Landing Section*/
 .landing-page {
-    height: 100vh;
+    min-height: 100vh;
     background-image: url(../img/01.jpg);
     background-size: cover;
     position: relative;
-}
-@media (max-width: 545px) {
-    
 }
 .overlay {
     position: absolute;
@@ -380,14 +372,17 @@ img {
 .intro-text h1 span {
     color: var(--main-color);
 }
+@media (max-width: 575px) {
+    .intro-text {
+        width: 90%;
+    }
+    .intro-text h1 {
+    font-size: 1.8rem;
+}
+}
 .intro-text p {
     font-size: 1.2rem;
     line-height: 1.8;
-}
-@media (max-width: 450px) {
-    .intro-text {
-        text-align: justify;
-    }
 }
 /* About us section */
 .about-us {
@@ -397,6 +392,12 @@ img {
 }
 .about-us .container {
     display: flex;
+}
+@media (max-width: 775px) {
+    .about-us .container {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 .about-us .info {
     flex: 1;
@@ -410,10 +411,22 @@ img {
     line-height: 1.6;
     color: #535353;
 }
+@media (max-width: 775px) {
+    .about-us .info p {
+        margin-bottom: 25px;
+    }
+}
 .about-us img {
     width: 350px;
     padding: 3px;
     border: 1px solid var(--main-color);
+}
+@media (max-width: 775px) {
+    .about-us img {
+        text-align: center;
+        width: 90%;
+        margin: 20px auto;
+    }
 }
 /* Skills Section */
 .skills {
@@ -436,6 +449,15 @@ img {
 }
 .skill-box h4 {
     width: 100px;
+}
+@media (max-width: 575px) {
+    .skill-box {
+        flex-direction: column;
+        text-align: center;
+    }
+    .skill-box h4 {
+    margin-bottom: 25px;
+    }
 }
 .progress {
     position: relative;
@@ -631,6 +653,23 @@ img {
 .timeline .timeline-cont .content.bottom {
     margin-top: 200px;
 }
+@media (max-width: 767px) {
+    .timeline .timeline-cont {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .timeline .timeline-cont .content.top::after,
+    .timeline .timeline-cont .content.bottom::after {
+    display: none;
+    }
+    .timeline .timeline-cont .content.top::before,
+    .timeline .timeline-cont .content.bottom::before {
+    display: none;
+    }
+    .timeline .timeline-cont .content.bottom {
+        margin-top: 10px;
+    }
+}
 .timeline .timeline-cont h3 {
     color: var(--main-color);
     margin-bottom: 15px;
@@ -658,6 +697,11 @@ img {
 }
 .features .feat-box {
     text-align: center;
+}
+@media (max-width: 676px) {
+    .features .feat-box {
+        margin-bottom: 20px;
+    }
 }
 .features .feat-box i {
     color: var(--main-color);
@@ -703,10 +747,10 @@ img {
     color: #fff;
 }
 .testimonials .testimonials-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
     gap: 10px;
+    align-items: center;
     margin-bottom: 10px;
 }
 .testimonials .testimonials-content .box {
@@ -768,6 +812,11 @@ img {
     margin: 10px auto;
     padding: 20px;
 }
+@media (max-width: 677px) {
+    .contact-us form {
+        flex-direction: column;
+    }
+}
 .contact-us .left,
 .contact-us .right {
     flex: 1;
@@ -813,4 +862,49 @@ img {
     border: 1px solid transparent;
     color: #fff;
 }
-
+/*Footer*/
+.footer {
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 10px;
+}
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-msg {
+    display: flex;
+    gap: 5px;
+    flex: 1;
+}
+.footer-msg p {
+    color: #ff0000;
+}
+li:hover ~ li p{
+    -webkit-animation: wave-animation 0.3s infinite;
+    animation: wave-animation 0.3s infinite;
+}
+.social {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row-reverse;
+    flex: 2;
+}
+.social a {
+    color: #fff;
+    text-decoration: none;
+}
+@keyframes wave-animation {
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(20deg);
+    }
+    75% {
+        transform: rotate(-15deg);
+    }
+}
