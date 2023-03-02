@@ -259,12 +259,22 @@ img {
     background-color: rgba(0, 0, 0, 0.3);
     z-index: 1;
 }
+.headroom {
+    will-change: transform;
+    transition: transform 200ms linear;
+}
+.headroom--pinned {
+    transform: translateY(0%);
+}
+.headroom--unpinned {
+    transform: translateY(-100%);
+}
 .landing-page .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    z-index: 2;
+    z-index: 20000000000000;
     color: #fff;
     position: relative;
 }
